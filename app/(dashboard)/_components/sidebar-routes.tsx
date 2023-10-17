@@ -1,31 +1,34 @@
 "use client";
 
 import SidebarItem from "./sidebar-item";
+import { BarChart, Compass, Layout, List } from "lucide-react";
 
 const guestRoutes = [
   {
-    icon: 'LayoutIcon',
+    icon: Layout,
     label: "Dashboard",
     href: "/",
   },
   {
-    icon: 'CompasIcon',
+    icon: Compass,
     label: "Browse",
     href: "/search",
   },
 ];
 const SidebaRroutes = () => {
-    const routes = guestRoutes;
-  return <div className="flex flex-col w-full">
-    {routes.map(route=>(
+  const routes = guestRoutes;
+  return (
+    <div className="flex flex-col w-full">
+      {routes.map((route) => (
         <SidebarItem
-            key={route.href}
-            icon={route.icon}
-            label={route.label}
-            href={route.href}
+          key={route.href}
+          icon={route.icon}
+          label={route.label}
+          href={route.href}
         />
-    ))}
-  </div>;
+      ))}
+    </div>
+  );
 };
 
 export default SidebaRroutes;
